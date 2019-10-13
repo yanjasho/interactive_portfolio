@@ -1,0 +1,11 @@
+.home-btn {
+  float: right;
+  color:#800080;
+  background-color: #ffe6e6;
+  width: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #800080;
+  border-style: solid;
+}
