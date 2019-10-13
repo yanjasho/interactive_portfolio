@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
 import MapMarkers from "../../components/MapMarkers";
 import PoweredByGoogle from "../../components/PoweredByGoogle";
+import Jumbotron from "../../components/Jumbotron"
 
 class City extends Component {
 
@@ -54,7 +55,7 @@ class City extends Component {
    
   render() {
     return (
-      <div>
+      <Jumbotron  style={{ backgroundColor: "#ffe6ff"}}>
         <p>You can add your favorite city to the map</p>
         <p>Map with markers is rendered by google-map-react npm package. Search is made by server-side call to Google Places API. Data about favorite cities fed from/saved into MongoDB, server-side communication with said database is supported by Mongoose. </p>
         <div className="container">
@@ -77,16 +78,15 @@ class City extends Component {
               Search
           </FormBtn>
           <PoweredByGoogle />
-        </div>  
-        <br /> <br />  <br />        
-        <div className="container">
+        </div>        
+        <Jumbotron style={{ paddingTop: 80, backgroundColor: 	"#ffe6ff"}}>
           {(this.state.cities.length) ? (
             <MapMarkers
               cities={this.state.cities}
             />
           ): (<div>No map</div>)}
-        </div>
-      </div>
+        </Jumbotron>
+      </Jumbotron>
     );
   }
 }

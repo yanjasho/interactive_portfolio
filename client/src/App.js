@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav"
 import City from "./blocks/City"
+import Menu from "./blocks/Menu"
 
 class App extends Component {
 
@@ -21,9 +22,8 @@ class App extends Component {
       <Router>
       <div>
         <Nav achievs={this.state.achievs} />
-        <br /> <br />
         <Switch>
-          {/* <Route exact path="/city" component={City} /> */}
+          <Route exact path="/" component={Menu} />
           <Route exact path="/city" render={(props) => <City {...props} callbackFromParent={this.getAchiev}  />} />
           {/* <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
