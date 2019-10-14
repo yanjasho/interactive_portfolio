@@ -17,7 +17,7 @@ function Nav(props) {
           ):(<button className="dropdown-item">None yet</button>)}
         </div>
       </div>
-      <a className="navbar-brand" href="/">Awesome React App</a>
+      <strong className="navbar-brand">Awesome React App</strong>
       <div className="dropdown my-2 my-lg-0 btn-group dropleft">
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About my Creator

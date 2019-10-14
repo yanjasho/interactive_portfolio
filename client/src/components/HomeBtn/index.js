@@ -1,12 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
 
-function HomeBtn(props) {
-  return (
-    <a href="/" className="home-btn" {...props} role="button" tabIndex="0" style={{ cursor: 'pointer'}}>
-      Main Menu
-    </a>
-  );
+class HomeBtn extends Component {
+
+  sendHome =() =>{
+    this.props.callbackFromParent("home")
+  }
+
+  render() {
+    return (
+      <button onClick={this.sendHome} className="home-btn"  role="button" tabIndex="0" style={{ cursor: 'pointer'}}>
+        Main Menu
+      </button>
+    );
+  }
 }
 
 export default HomeBtn;

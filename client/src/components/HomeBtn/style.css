@@ -1,4 +1,7 @@
 .home-btn {
+  position: absolute;
+  top: 100px;
+  right: 100px;
   float: right;
   color:#800080;
   background-color: #ffe6e6;

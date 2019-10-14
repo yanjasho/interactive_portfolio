@@ -9,27 +9,31 @@ class Menu extends Component {
     choices: [
       {name:"Face",
       line:"Wanna see her? Can't blame you if you don't. Wonderfull person, but not much of a looker.",
-      link:"/face"},
+      link:"face"},
       {name:"Some back-end skill.",
       line:"Def check this out. Back-end is her thing.",
-      link:"/city"},
+      link:"city"},
       {name: "My code",
       line:"I am a very handsome App. Wanna see me naked?",
       link:"https://github.com/yanjasho/interactive_portfolio"},
       {name: "Random fact",
       line:"Just for giggles.",
-      link:""},
+      link:"fact"},
       {name: "Little game",
       line:"Not sure if I'll make it.",
-      link:""},
+      link:"game"},
       {name: "Some front-end skill.",
       line:"This may hurt. Don't go if you have sensitive eyes or general sense of taste.",
-      link:""}],
+      link:"css"}],
     alert: false,
     alertline: "",
     alertlink: ""
   };
 
+  sendActive = () =>{
+    this.props.callbackFromParent(this.state.alertlink)
+  }
+  
   render() {
     return (
       <Jumbotron style={{backgroundColor: "#ffe6f7"}}>
@@ -43,7 +47,7 @@ class Menu extends Component {
           ))}
           <Alert style={{ opacity: this.state.alert ? 1 : 0 }} >
             {this.state.alertline} <br />
-            <a style={{color:"#0000ff"}} href={this.state.alertlink}> Yeah, let's check it out</a>
+            <button style={{color:"#0000ff"}} onClick={this.sendActive} > Yeah, let's check it out</button>
             <DeleteBtn onClick={() => this.setState({alert: false})} />
           </Alert>
         </Jumbotron>
