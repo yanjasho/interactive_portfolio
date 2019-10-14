@@ -57,7 +57,6 @@ class City extends Component {
     return (
       <Jumbotron  style={{ backgroundColor: "#ffe6ff"}}>
         <p>You can add your favorite city to the map</p>
-        <p>Map with markers is rendered by google-map-react npm package. Search is made by server-side call to Google Places API. Data about favorite cities fed from/saved into MongoDB, server-side communication with said database is supported by Mongoose. </p>
         <div className="container">
           <form>
             <Input

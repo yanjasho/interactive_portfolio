@@ -3,6 +3,8 @@ import Nav from "./components/Nav"
 import City from "./blocks/City"
 import Menu from "./blocks/Menu"
 import Face from "./blocks/Face"
+import Fact from "./blocks/Fact"
+import Code from "./blocks/Code"
 import HomeBtn from "./components/HomeBtn"
 
 class App extends Component {
@@ -12,7 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       achievs: [],
-      components:[<Menu {...props} callbackFromParent={this.changeActive} />, <City {...props} callbackFromParent={this.getAchiev} />, <Face {...props} callbackFromParent={this.getAchiev} />],
+      components:[<Menu {...props} callbackFromParent={this.changeActive} />, <City {...props} callbackFromParent={this.getAchiev} />, <Face {...props} callbackFromParent={this.getAchiev} />, <Fact {...props} callbackFromParent={this.getAchiev} />, <Code {...props} callbackFromParent={this.getAchiev} />],
       activecomp: <Menu {...props} callbackFromParent={this.changeActive} />
     }
   };
@@ -45,7 +47,7 @@ class App extends Component {
         break;
       case "code":
         this.setState({
-          activecomp: this.state.components[0]
+          activecomp: this.state.components[4]
         })
         break;
       case "game":
@@ -55,7 +57,7 @@ class App extends Component {
         break;
       case "fact":
         this.setState({
-          activecomp: this.state.components[0]
+          activecomp: this.state.components[3]
         })
         break;
       case "home":
