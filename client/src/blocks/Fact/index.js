@@ -19,7 +19,7 @@ class Fact extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.selectedOption=="hyena"){
+        if(this.state.selectedOption==="hyena"){
             this.sendAchiev();
             this.setState({alert:true, alertext: "Exactly. Adorable creature, just like her!"})
         }
@@ -34,7 +34,7 @@ class Fact extends Component {
 
     render() {
         return (
-            <Jumbotron style={{backgroundColor:"#f9ecf2"}}>
+            <Jumbotron style={{backgroundImage: "linear-gradient(#bfbfbf, #f9ecf2, #f9ecf2, #E6E6FA)"}}>
                 <p>Hey, wanna guess her soul animal?</p>
                 <Alert style={{ opacity: this.state.alert ? 1 : 0 }} >
                     {this.state.alertext}

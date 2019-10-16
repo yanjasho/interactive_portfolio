@@ -9,7 +9,7 @@ class Code extends Component {
 
     render() {
         return (
-            <Jumbotron style={{backgroundColor:"#ffe6cc", padding:200}}>
+            <Jumbotron style={{backgroundImage: "linear-gradient(#bfbfbf, #ffe6cc, #ffe6cc, #E6E6FA)", padding:200}}>
                 <p> My whole thing is React. Rendered as one page, components get switched by Menu buttons. Achievements get tracked by App component state and passed to/from children by props and callbacks</p>
                 <p>Map with markers is rendered by google-map-react npm package. Search is made by server-side call to Google Places API. Data about favorite cities fed from/saved into MongoDB, server-side communication with said database is supported by Mongoose. </p>
                 <p>Server is set by Express framework. Requests supported by Axios.</p>

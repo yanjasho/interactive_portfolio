@@ -14,8 +14,8 @@ class Face extends Component {
 
     render() {
         return (
-            <Jumbotron style={{backgroundColor:"#ccffee"}}>
-                <p>Here she is. And cute puppy for the balance.</p>
+            <Jumbotron style={{backgroundImage: "linear-gradient(#bfbfbf, #ccffee, #ccffee, #E6E6FA)"}}>
+                <p>Here she is. And a cute puppy for the balance.</p>
                 <img src={Img} alt="cuteness" width="500" height="500" />
             </Jumbotron>
         );

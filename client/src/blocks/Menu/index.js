@@ -36,7 +36,7 @@ class Menu extends Component {
   
   render() {
     return (
-      <Jumbotron style={{backgroundColor: "#ffe6f7"}}>
+      <Jumbotron style={{backgroundImage: "linear-gradient(#bfbfbf, #ffe6f7, #ffe6f7, #E6E6FA)"}}>
         <div>
           Hi! I am an awesome React App. Wanna know who made me? Well, my main purpose of existence is to bragg about her.
         </div>

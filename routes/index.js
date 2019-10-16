@@ -16,6 +16,9 @@ module.exports = function(app) {
         db.City.find({})
         .then(dbCity => res.json(dbCity))
       })
+      .catch(function(err) {
+        res.json(err);
+      })
     })
     .catch(function(err) {
       res.json(err);

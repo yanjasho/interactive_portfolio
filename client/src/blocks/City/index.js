@@ -4,13 +4,17 @@ import { Input, FormBtn } from "../../components/Form";
 import MapMarkers from "../../components/MapMarkers";
 import PoweredByGoogle from "../../components/PoweredByGoogle";
 import Jumbotron from "../../components/Jumbotron"
+import Alert from "../../components/Alert"
+import DeleteBtn from "../../components/DeleteBtn"
 
 class City extends Component {
 
   state = {
     cities: [],
     search:"",
-    name: ""
+    name: "",
+    alert: false,
+    alertline: ""
   };
 
   componentDidMount() {
@@ -40,11 +44,27 @@ class City extends Component {
     event.preventDefault();
     API.getCitiesGoogle(this.state.search.replace(/ /g, '+').replace(/,/g, ''),this.state.name)
     .then(res=>{
-      this.setState({ 
-        cities: res.data,    
-        search:"",
-        name: "" 
-      })
+      if(res.data.name==="MongoError"){
+        this.setState({
+          alert: true,
+          alertline: "Looks like it's already on a map."
+        })
+      }
+      else if(!res.data.length){
+        this.setState({
+          alert: true,
+          alertline: "Are you sure it's a real place?"
+        })
+      }
+      else{
+        this.setState({ 
+          cities: res.data,    
+          search:"",
+          name: "" ,
+          alert: true,
+          alertline: "You've left your mark."
+        })
+      }
     }).then(this.sendAchiev())
     .catch(err => console.log(err));
   };
@@ -55,7 +75,7 @@ class City extends Component {
    
   render() {
     return (
-      <Jumbotron  style={{ backgroundColor: "#ffe6ff"}}>
+      <Jumbotron  style={{ backgroundImage: "linear-gradient(#bfbfbf, #ffe6ff, #ffe6ff, #E6E6FA)"}}>
         <p>You can add your favorite city to the map</p>
         <div className="container">
           <form>
@@ -77,14 +97,18 @@ class City extends Component {
               Search
           </FormBtn>
           <PoweredByGoogle />
+          <Alert style={{ opacity: this.state.alert ? 1 : 0, width: "400px" }} >
+            {this.state.alertline}
+            <DeleteBtn onClick={() => this.setState({alert: false})} />
+          </Alert>
         </div>        
-        <Jumbotron style={{ paddingTop: 80, backgroundColor: 	"#ffe6ff"}}>
+        <div style={{ paddingTop: 80}}>
           {(this.state.cities.length) ? (
             <MapMarkers
               cities={this.state.cities}
             />
           ): (<div>No map</div>)}
-        </Jumbotron>
+        </div>
       </Jumbotron>
     );
   }

@@ -5,6 +5,7 @@ import Menu from "./blocks/Menu"
 import Face from "./blocks/Face"
 import Fact from "./blocks/Fact"
 import Code from "./blocks/Code"
+import Css from "./blocks/Css"
 import HomeBtn from "./components/HomeBtn"
 
 class App extends Component {
@@ -14,18 +15,18 @@ class App extends Component {
     super(props);
     this.state = {
       achievs: [],
-      components:[<Menu {...props} callbackFromParent={this.changeActive} />, <City {...props} callbackFromParent={this.getAchiev} />, <Face {...props} callbackFromParent={this.getAchiev} />, <Fact {...props} callbackFromParent={this.getAchiev} />, <Code {...props} callbackFromParent={this.getAchiev} />],
+      components:[<Menu {...props} callbackFromParent={this.changeActive} />, <City {...props} callbackFromParent={this.getAchiev} />, <Face {...props} callbackFromParent={this.getAchiev} />, <Fact {...props} callbackFromParent={this.getAchiev} />, <Code {...props} callbackFromParent={this.getAchiev} />, <Css {...props} callbackFromParent={this.getAchiev} />],
       activecomp: <Menu {...props} callbackFromParent={this.changeActive} />
     }
   };
 
   getAchiev = data => {
-    if(this.state.achievs.indexOf(data)==-1){
+    if(this.state.achievs.indexOf(data)===-1){
             this.setState(prevState => ({
         achievs: [...prevState.achievs, data]
       }))
     }
-    if(this.state.achievs.length == 6){
+    if(this.state.achievs.length === 6){
       this.setState({
         activecomp:"Giftshop"
       })
@@ -58,6 +59,11 @@ class App extends Component {
       case "fact":
         this.setState({
           activecomp: this.state.components[3]
+        })
+        break;
+      case "css":
+        this.setState({
+          activecomp: this.state.components[5]
         })
         break;
       case "home":
