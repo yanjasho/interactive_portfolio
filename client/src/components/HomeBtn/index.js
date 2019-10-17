@@ -9,7 +9,7 @@ class HomeBtn extends Component {
 
   render() {
     return (
-      <button onClick={this.sendHome} className="home-btn"  role="button" tabIndex="0" style={{ cursor: 'pointer'}}>
+      <button onClick={this.sendHome} className="home-btn"  tabIndex="0" style={{ cursor: 'pointer'}}>
         Main Menu
       </button>
     );

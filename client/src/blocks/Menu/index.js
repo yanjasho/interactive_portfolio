@@ -19,9 +19,6 @@ class Menu extends Component {
       {name: "Random fact",
       line:"Just for funzies.",
       link:"fact"},
-      {name: "Little game",
-      line:"Not sure if I'll make it.",
-      link:"game"},
       {name: "Some front-end skill.",
       line:"This may hurt. Don't go if you have sensitive eyes or general sense of taste.",
       link:"css"}],
@@ -29,6 +26,18 @@ class Menu extends Component {
     alertline: "",
     alertlink: ""
   };
+
+  componentDidMount() {
+    if(this.props.achievs===5){
+      this.setState(prevState => ({
+        choices: [...prevState.choices, {
+          name:"Bow and curtains",
+          line:"Was a pleasure. Out this way, please.",
+          link:"titles"
+        }]
+      }))
+    }
+  }
 
   sendActive = () =>{
     this.props.callbackFromParent(this.state.alertlink)
