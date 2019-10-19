@@ -8,7 +8,7 @@ class Css extends Component {
     }
     
     sendAchiev=()=>{
-        this.props.callbackFromParent("Designster witness")
+        this.props.callbackFromParent("Designster Witness")
     }
 
     render() {

@@ -4,7 +4,7 @@ import Jumbotron from "../../components/Jumbotron"
 class Code extends Component {
 
     sendAchiev=()=>{
-        this.props.callbackFromParent("Code guts")
+        this.props.callbackFromParent("Code Guts")
     }
 
     render() {
