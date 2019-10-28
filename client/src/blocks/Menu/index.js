@@ -28,7 +28,7 @@ class Menu extends Component {
   };
 
   componentDidMount() {
-    if(this.props.achievs===3){
+    if(this.props.achievs>=3){
       this.setState(prevState => ({
         choices: [...prevState.choices, {
           name:"Bow and curtains",
