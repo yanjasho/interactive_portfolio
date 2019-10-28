@@ -107,7 +107,7 @@ class City extends Component {
             <MapMarkers
               cities={this.state.cities}
             />
-          ): (<div>No map</div>)}
+          ): (<div> Patience. Cartographers are adding some finishing touches. </div>)}
         </div>
       </Jumbotron>
     );

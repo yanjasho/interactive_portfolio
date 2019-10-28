@@ -25,7 +25,6 @@ function Nav(props) {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a className="dropdown-item" href="https://github.com/yanjasho" target="_blank" rel="noopener noreferrer">Github</a>
           <a className="dropdown-item" href="https://www.linkedin.com/in/hannahuseva/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a className="dropdown-item" href="https://yanjasho.github.io/" target="_blank" rel="noopener noreferrer">Even less <br /> professional portfolio</a>
         </div>
       </div>
     </nav>
