@@ -6,7 +6,7 @@ class Titles extends Component {
     render() {
         return (
             <Jumbotron style={{backgroundImage: "linear-gradient(#bfbfbf, #c6ffb3, #c6ffb3, #E6E6FA)", padding:200}}>
-                <p>Greetings! i am Hanna and that was my little pet project. A bit sassy like all the things React, but also spunky and efficient like all the things React.</p>
+                <p>Greetings! I am Hanna and that was my little pet project. A bit sassy like all the things React, but also spunky and efficient like all the things React.</p>
                 <p>If you were reasonably entertained by it, below is more stuff I did to look at.</p>
                 <p>If you are potential employer, <a href="https://www.linkedin.com/in/hannahuseva/" target="_blank" rel="noopener noreferrer">welcome to my LinkedIn</a>. I promise to be slightly more professional there. </p>
                 <p>Cheers! Glad you made it this far! </p>

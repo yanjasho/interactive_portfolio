@@ -4,6 +4,7 @@ import City from "./blocks/City"
 import Menu from "./blocks/Menu"
 import Face from "./blocks/Face"
 import Fact from "./blocks/Fact"
+import Game from "./blocks/Game"
 import Code from "./blocks/Code"
 import Css from "./blocks/Css"
 import Titles from "./blocks/Titles"
@@ -63,6 +64,11 @@ class App extends Component {
       case "fact":
         this.setState({
           activecomp: <Fact callbackFromParent={this.getAchiev} />
+        })
+        break;
+      case "game":
+        this.setState({
+          activecomp: <Game callbackFromParent={this.getAchiev} />
         })
         break;
       case "css":
